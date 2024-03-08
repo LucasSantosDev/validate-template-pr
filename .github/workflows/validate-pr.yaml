@@ -1,4 +1,4 @@
-name: Checklist Pull Request
+name: Validate Reviewers Pull Request
 
 on:
   pull_request:
@@ -12,11 +12,11 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Check if purpose is understood
+      - name: 🧪 Checking whether reviewers have checked their duties
         run: |
           if ! echo "${{ github.event.pull_request.body }}" | grep -q '\[x\] Verifiquei todos os pontos da revisão'; then
-              echo "Ambos os revisores marcaram o checkbox."
+            echo "Ambos os revisores marcaram o checkbox."
           else
-              echo "Os dois revisores devem marcar o checkbox."
-              exit 1
+            echo "Os dois revisores devem marcar o checkbox."
+            exit 1
           fi
