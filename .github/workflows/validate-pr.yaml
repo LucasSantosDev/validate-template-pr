@@ -19,7 +19,7 @@ jobs:
             exit 1
           fi
 
-          if ! echo "${{ github.event.pull_request.body }}" | grep -q '\[x\] Verifiquei todos os pontos da revisão'; then
+          if ! echo "${{ github.event.pull_request.body }}" | grep -q '\[x\] Verifiquei todos os pontos da revisão' | grep -q '\[x\] Verifiquei todos os pontos da revisão'; then
             echo "O Revisor 2 não marcou o checkbox."
             exit 1
           fi
