@@ -14,18 +14,14 @@ jobs:
 
       - name: Check if purpose is understood
         run: |
-          if grep -q '\[x\] Verifiquei todos os pontos da revisão' <<< "${{ github.event.pull_request.body }}"; then
-              echo "Checkbox do Revisor 1 marcado."
+          if ! echo "${{ github.event.pull_request.body }}" | grep -q '\[x\] Verifiquei todos os pontos da revisão'; then
               if grep -q '\[x\] Verifiquei todos os pontos da revisão' <<< "${{ github.event.pull_request.body }}"; then
-                  echo "Checkbox do Revisor 2 marcado."
                   echo "Ambos os revisores marcaram o checkbox."
               else
-                  echo "Checkbox do Revisor 2 não marcado."
                   echo "Os dois revisores devem marcar o checkbox."
                   exit 1
               fi
           else
-              echo "Checkbox do Revisor 1 não marcado."
               echo "Os dois revisores devem marcar o checkbox."
               exit 1
           fi
