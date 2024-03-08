@@ -12,14 +12,18 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Extract PR body
+        id: extract_pr_body
+        run: echo "::set-output name=body::$(echo ${{ github.event.pull_request.body }} | grep -oP '(?<=### 👀 Checklist do revisor).*?(?=####)')"
+
       - name: Checking whether reviewers have checked their duties
         run: |
-          if ! echo "${{ github.event.pull_request.body }}" | grep -q '\[x\] Verifiquei todos os pontos da revisão'; then
+          if ! echo "${{ steps.extract_pr_body.outputs.body }}" | grep -q '\[x\] Verifiquei todos os pontos da revisão'; then
             echo "O Revisor 1 não marcou o checkbox."
             exit 1
           fi
           
-          if ! echo "${{ github.event.pull_request.body }}" | grep -q '\[x\] Verifiquei todos os pontos da revisão' | grep -q '\[x\] Verifiquei todos os pontos da revisão'; then
+          if ! echo "${{ steps.extract_pr_body.outputs.body }}" | grep -q '\[x\] Verifiquei todos os pontos da revisão' | grep -q '\[x\] Verifiquei todos os pontos da revisão'; then
             echo "O Revisor 2 não marcou o checkbox."
             exit 1
           fi
