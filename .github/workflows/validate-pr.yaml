@@ -14,7 +14,8 @@ jobs:
 
       - name: Extract PR body
         id: extract_pr_body
-        run: echo "::set-output name=body::$(echo ${{ github.event.pull_request.body }} | grep -oP '(?<=### 👀 Checklist do revisor).*?(?=####)')"
+        run: |
+          echo "::set-output name=body::$(echo ${{ github.event.pull_request.body }} | sed -n '/### 👀 Checklist do revisor/,/####/p')"
 
       - name: Checking whether reviewers have checked their duties
         run: |
