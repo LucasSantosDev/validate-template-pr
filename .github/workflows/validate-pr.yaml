@@ -15,6 +15,6 @@ jobs:
       - name: Check if purpose is understood
         run: |
           if ! grep -q '\[x\] Você entendeu o propósito desse PR?' <<< "${{ github.event.pull_request.body }}"; then
-            echo "Purpose checkbox not checked"
+            echo ">>> Purpose checkbox not checked"
             exit 1
           fi
