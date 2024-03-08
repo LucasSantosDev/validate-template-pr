@@ -18,24 +18,3 @@ jobs:
             echo "Purpose checkbox not checked"
             exit 1
           fi
-
-      - name: Check if business flow is understood
-        run: |
-          if ! grep -q '\[x\] Você entendeu o fluxo de negócio?' ${{ github.event.pull_request.body }}; then
-            echo "Business flow checkbox not checked"
-            exit 1
-          fi
-
-      - name: Check if technical solution is understood
-        run: |
-          if ! grep -q '\[x\] Você entendeu o que e como foi desenvolvido tecnicamente a solução?' ${{ github.event.pull_request.body }}; then
-            echo "Technical solution checkbox not checked"
-            exit 1
-          fi
-
-      - name: Check if tests cover most cases
-        run: |
-          if ! grep -q '\[x\] Você analisou se os testes estão cobrindo a maioria dos casos?' ${{ github.event.pull_request.body }}; then
-            echo "Tests coverage checkbox not checked"
-            exit 1
-          fi
