@@ -14,7 +14,7 @@ jobs:
 
       - name: Checking whether reviewers have checked their duties
         run: |
-          if ! echo "${{ github.event.pull_request.body }}" | grep -q '\[x\] Verifiquei todos os pontos da revisão'
+          if ! echo "${{ github.event.pull_request.body }}" | grep -q '\[x\] Verifiquei todos os pontos da revisão'; then
             echo "Os dois revisores precisam marcar o checkbox"
             exit 1
           fi
