@@ -14,7 +14,16 @@
 
 #### Revisor 1️⃣
 
-- [ ] Você entendeu o propósito desse PR?
-- [ ] Você entendeu o fluxo de negócio?
-- [ ] Você entendeu o que e como foi desenvolvido tecnicamente a solução?
-- [ ] Você analisou se os testes estão cobrindo a maioria dos casos?
+- Você entendeu o propósito desse PR?
+- Você entendeu o fluxo de negócio?
+- Você entendeu o que e como foi desenvolvido tecnicamente a solução?
+- Você analisou se os testes estão cobrindo a maioria dos casos?
+- [ ] Verifiquei todos os pontos da revisão
+
+#### Revisor 2️⃣
+
+- Você entendeu o propósito desse PR?
+- Você entendeu o fluxo de negócio?
+- Você entendeu o que e como foi desenvolvido tecnicamente a solução?
+- Você analisou se os testes estão cobrindo a maioria dos casos?
+- [ ] Verifiquei todos os pontos da revisão
