@@ -18,7 +18,7 @@
 - Você entendeu o fluxo de negócio?
 - Você entendeu o que e como foi desenvolvido tecnicamente a solução?
 - Você analisou se os testes estão cobrindo a maioria dos casos?
-- [ ] Verifiquei todos os pontos da revisão
+- [ ] Verifiquei todos os pontos da revisão [1]
 
 #### Revisor 2️⃣
 
@@ -26,4 +26,4 @@
 - Você entendeu o fluxo de negócio?
 - Você entendeu o que e como foi desenvolvido tecnicamente a solução?
 - Você analisou se os testes estão cobrindo a maioria dos casos?
-- [ ] Verifiquei todos os pontos da revisão
+- [ ] Verifiquei todos os pontos da revisão [2]
